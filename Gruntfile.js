@@ -1,211 +1,32 @@
-// Generated on 2016-04-22 using generator-web 0.2.5
-
-'use strict';
-var LIVERELOAD_PORT = 4000,
-SERVER_PORT = 3000,
-lrSnippet = require('connect-livereload')({ port: LIVERELOAD_PORT }),
-mountFolder = function (connect, dir) {
-	return connect.static(require('path').resolve(dir));
-};
-
-module.exports = function (grunt) {
-	// show elapsed time at the end
-	require('time-grunt')(grunt);
-
-	// load all grunt tasks
-	require('load-grunt-tasks')(grunt);
-
-	var yeomanConfig = {
-		app: 'app',
-		dist: 'dist'
-	};
-
-	// Define the configuration for all the tasks
+module.exports = function(grunt){
 	grunt.initConfig({
-		// Project settings
-		yeoman: yeomanConfig,
+		pkg:grunt.file.readJSON('package.json'),
 
-		// Watches files for changes and runs tasks based on the changed files
-		watch: {
-			options: {
-				spawn: false,
-				livereload: LIVERELOAD_PORT
-			},
-			css: {
-				files: [
-					'{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css'
-				]
-			},
-			livereload: {
-				files: [
-					'Gruntfile.js',
-					'<%= yeoman.app %>/{,*/}*.html',
-					'{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-					'<%= yeoman.app %>/media/{,*/}*.{gif,jpeg,jpg,png,svg,webp}'
-				]
-			}
+		watch:{
+			options:{livereload:true},
+			files:['app/**'],
+			tasks:[]
 		},
-
-		// The actual grunt server settings
-		connect: {
-			options: {
-				port: SERVER_PORT,
-				// change this to '0.0.0.0' to access the server from outside
-				hostname: 'localhost'
-			},
-			livereload: {
-				options: {
-					middleware: function (connect) {
-						return [
-							lrSnippet,
-							mountFolder(connect, '.tmp'),
-							mountFolder(connect, 'bower_components'),
-							mountFolder(connect, yeomanConfig.app)
-						];
-					}
-				}
-			},
-			dist: {
-				options: {
-					middleware: function (connect) {
-						return [
-							mountFolder(connect, yeomanConfig.dist)
-						];
-					}
+		express:{
+			all:{
+				options:{
+					port:3000,
+					hostname:'localhost',
+					bases:['./app'],
+					livereload:true
 				}
 			}
 		},
-
-		//Open in a new browser window
-		open: {
+		open : {
 			server: {
-				path: 'http://localhost:<%= connect.options.port %>'
-			}
-		},
-
-		useminPrepare: {
-			html: '<%= yeoman.app %>/index.html',
-			options: {
-				dest: '<%= yeoman.dist %>'
-			}
-		},
-
-		usemin: {
-			html: ['<%= yeoman.dist %>/{,*/}*.html'],
-			css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
-			options: {
-				dirs: ['<%= yeoman.dist %>']
-			}
-		},
-
-		htmlmin: {
-			dist: {
-				files: [{
-					expand: true,
-					cwd: '<%= yeoman.app %>',
-					src: '*.html',
-					dest: '<%= yeoman.dist %>'
-				}]
-			}
-		},
-
-		imagemin: {
-			dist: {
-				files: [{
-					expand: true,
-					cwd: '<%= yeoman.app %>/media',
-					src: '{,*/}*.{png,jpg,jpeg,gif}',
-					dest: '<%= yeoman.dist %>/media'
-				}]
-			}
-		},
-
-		cssmin: {
-			dist: {
-				files: {
-					'<%= yeoman.dist %>/styles/main.min.css': ['.tmp/styles/main.css']
-				}
-			}
-		},
-
-		// Empties folders to start fresh
-		clean: {
-			dist: ['.tmp', '<%= yeoman.dist %>/*'],
-			server: '.tmp'
-		},
-
-		// Copies remaining files to places other tasks can use
-		copy: {
-			dist: {
-				files: [
-					{
-						expand: true,
-						filter: 'isFile',
-						cwd: '<%= yeoman.app %>/',
-						dest: '<%= yeoman.dist %>',
-						src: [
-							'*.{ico,png}'
-						]
-					},
-					{
-						expand: true,
-						flatten: true,
-						cwd: 'bower_components/',
-						dest: '<%= yeoman.dist %>/styles/fonts/',
-						src: ['font-awesome/fonts/*.*']
-
-					}
-				]
-			},
-			server: {
-				files: [
-					{
-						expand: true,
-						flatten: true,
-						cwd: 'bower_components/',
-						dest: '.tmp/styles/fonts/',
-						src: ['font-awesome/fonts/*.*']
-					}
-				]
-			}
-		},
-
-		// Make sure code styles are up to par and there are no obvious mistakes
-		jshint: {
-			options: {
-				jshintrc: '.jshintrc',
-				reporter: require('jshint-stylish')
-			},
-			files: [
-				'Gruntfile.js',
-				'<%= yeoman.app %>/scripts/{,*/}*.js'
-			]
+				path: 'http://localhost:3000/'
+		  }
 		}
 	});
 
-	grunt.registerTask('build', [
-		'clean:dist',
-		'useminPrepare',
-		'htmlmin',
-		'cssmin',
-		'imagemin',
-		'jshint',
-		'concat',
-		'uglify',
-		'usemin',
-		'copy:dist'
-	]);
+		grunt.loadNpmTasks('grunt-contrib-watch');
+		grunt.loadNpmTasks('grunt-express');
+		grunt.loadNpmTasks('grunt-open');
+		grunt.registerTask('serve',['express', 'open:server', 'watch']);
 
-	grunt.registerTask('serve', [
-		'clean:server',
-		'copy:server',
-		'jshint',
-		'connect:livereload',
-		'open:server',
-		'watch'
-	]);
-
-	grunt.registerTask('default', [
-		'jshint'
-	]);
-};
+	};
