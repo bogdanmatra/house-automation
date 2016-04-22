@@ -2,7 +2,7 @@ module.exports = function(grunt){
 
 	// Simple gruntfile used for livereload, server start and open
   var host = 'localhost';
-	var port = 3000;
+  var port = 3000;
   var base = 'app';
   var livereload = true;
 
