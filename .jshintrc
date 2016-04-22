@@ -16,10 +16,5 @@
     "strict": true,
     "trailing": true,
     "undef": true,
-    "unused": true,
-    "globals": {
-		"Modernizr": false,
-        "_": false,
-        "required": false
-    }
+    "unused": true
 }
