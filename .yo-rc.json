@@ -1,0 +1,10 @@
+{
+  "generator-web": {
+    "appName": "house-automation",
+    "includeModernizr": false,
+    "includeUnderscore": false,
+    "includeFontAwesome": true,
+    "includeRespond": false,
+    "includeHtml5shiv": false
+  }
+}
