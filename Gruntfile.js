@@ -1,25 +1,32 @@
 module.exports = function(grunt){
+
+	// Simple gruntfile used for livereload, server start and open
+  var host = 'localhost';
+	var port = 3000;
+  var base = 'app';
+  var livereload = true;
+
 	grunt.initConfig({
 		pkg:grunt.file.readJSON('package.json'),
 
 		watch:{
-			options:{livereload:true},
-			files:['app/**'],
+			options:{ livereload: livereload },
+			files:[ base + '/**' ],
 			tasks:[]
 		},
 		express:{
 			all:{
 				options:{
-					port:3000,
-					hostname:'localhost',
-					bases:['./app'],
-					livereload:true
+					port: port,
+					hostname: host,
+					bases:[ base ],
+					livereload: livereload
 				}
 			}
 		},
 		open : {
 			server: {
-				path: 'http://localhost:3000/'
+				path: 'http://' + host + ':' + port
 		  }
 		}
 	});
