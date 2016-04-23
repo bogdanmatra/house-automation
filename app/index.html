@@ -2,21 +2,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>house-automation</title>
+        <title>House automation</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <!-- CSS Libraries -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
         <!-- My CSS  -->
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/control-panel.css">
     </head>
-    <body class="background-room">
+    <body>
 
+      <div class="background-room">
+         <img class="room-image" src="img/background.jpg"/ alt="Background">
+         <div id="lamp-light">
+              <i class="fa fa-lightbulb-o fa-4x" aria-hidden="true"></i>
+         </div>
+         <div id="thermometer">
+             <img src="img/thermometer.png"/>
+             <div class="quicksilver"></div>
+         </div>
+         <div id="cloud">
+            <img src="img/rainy.png"/>
+         </div>
+      </div>
 
-      Getting started now
-      <i class="fa fa-low-vision" aria-hidden="true"></i>
+      <div class="control-panel slide-up">
+          <div class="header">
+              <i class="fa fa-gamepad fa-2x" aria-hidden="true"></i>
+              <span>Control Panel</span>
+          </div>
+      </div>
 
-
-	    	<!-- JS Libraries -->
+	    <!-- JS Libraries -->
         <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
         <!-- My JS -->
         <script src="js/main.js"></script>
