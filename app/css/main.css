@@ -23,7 +23,7 @@ body {
 
 #thermometer {
     position: absolute;
-    top: 2%;
+    top: 5%;
     right: 13%;
 }
 #thermometer img{
@@ -62,6 +62,7 @@ body {
 }
 
 #curtain{
+    z-index: 999;
     position: absolute;
     top: 0;
     overflow: hidden;

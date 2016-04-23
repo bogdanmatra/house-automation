@@ -37,3 +37,21 @@
     from {height: 15%;}
     to {height: 5%;}
 }
+
+.control-panel .controls-layout .control{
+    display: inline-block;
+    padding: 1% 5%;
+
+}
+.control-panel .controls-layout .control .fa{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.control-panel .controls-layout .control .fa:hover{
+    opacity: 1;
+}
+
+.control-panel .controls-layout .control .fa-chevron-circle-up{
+    display: block;
+}
