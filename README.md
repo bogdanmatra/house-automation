@@ -2,7 +2,7 @@
 House automation
 
 This project is a small JS application for simulating house automation.
-Technologies used: HTML, CSS, JavaScript, jQuery, Grunt
+Technologies used: HTML, CSS, FontAwesome, JavaScript, jQuery, Grunt
 
 The applications consists of:
  - a room which visually shows the actions you are performing to the house.
