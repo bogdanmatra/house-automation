@@ -1,15 +1,15 @@
 {
-  "name": "house-automation",
-  "version": "1.0.0",
-  "dependencies": {
-  },
-  "devDependencies": {
-    "grunt": "^0.4",
-    "grunt-contrib-watch": "^0.6",
-    "grunt-express": "^1.4.1",
-    "grunt-open": "^0.2.3"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  }
+    "name": "house-automation",
+    "version": "1.0.0",
+    "dependencies": {
+    },
+    "devDependencies": {
+        "grunt": "^0.4",
+        "grunt-contrib-watch": "^0.6",
+        "grunt-express": "^1.4.1",
+        "grunt-open": "^0.2.3"
+    },
+    "engines": {
+        "node": ">=0.10.0"
+    }
 }

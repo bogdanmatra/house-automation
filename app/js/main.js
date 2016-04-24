@@ -24,7 +24,7 @@ $(document).ready(function(){
     });
     curtain.init();
     controlPanel.find('.fa-moon-o').click(curtain.toggle);
-
+    
 
     // Initialize Thermometer Module and attach handlers
     var thermometer = ThermometerModule();

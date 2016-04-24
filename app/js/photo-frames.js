@@ -18,8 +18,8 @@ PhotosFramesModule = function(){
     var delayPhotoReplace = function(url, delay){
         var randomFrameIndex =  parseInt(Math.random()*maxFrames);
         var canceler = setTimeout(function(){
-                            updateDOM(url, randomFrameIndex);
-                       },delay);
+            updateDOM(url, randomFrameIndex);
+        },delay);
         cancelerList.push(canceler);
     };
 

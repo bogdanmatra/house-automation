@@ -6,7 +6,7 @@ ThermometerModule = function(){
     var minTemperature = 0;
     var maxTemperature = 35;
     var thermometer = $('#thermometer');
-
+    
     // Updates UI components translating values in 0-35 interval to thermoemter pixels and also displays it in digits
     var updateDOMTemperature = function(temperature){
         var totalHeight = parseInt(thermometer.css('height')) - parseInt(thermometer.find('.quicksilver').css('bottom'));

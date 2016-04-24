@@ -1,5 +1,5 @@
 /*Photo frames and frame container alignment on top of the background picture frames*/
-#photo-frames{
+#photo-frames {
     position: absolute;
     top: 4%;
     left: 33%;
@@ -7,44 +7,44 @@
     width: 23%;
 }
 
-#photo-frames > div{
+#photo-frames > div {
     position: absolute;
     background-size: cover;
 }
 
-.frame-large{
+.frame-large {
     width: 38%;
     height: 23%;
 }
 
-#photo-left-1{
+#photo-left-1 {
     left: 7%;
     top: 7%;
 }
-#photo-left-2{
+#photo-left-2 {
     left: 7%;
     top: 40%;
     width: 18%;
     height: 23%;
 }
-#photo-left-3{
+#photo-left-3 {
     left: 7%;
     top: 74%;
 }
 
-#photo-right-1{
+#photo-right-1 {
     right: 3%;
     top: 6%;
 }
 
-#photo-right-2{
+#photo-right-2 {
     right: 3%;
     top: 40%;
     width: 25%;
     height: 23%;
 }
 
-#photo-right-3{
+#photo-right-3 {
     right: 3%;
     top: 74%;
 }

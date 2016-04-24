@@ -1,6 +1,6 @@
- // SimpleSwitherModule defines the behaviour of a simple boolean switcher.
- // Data is pulled from the server initially then the click handler toggles between the 2 states
- // and sends the update to the server
+// SimpleSwitherModule defines the behaviour of a simple boolean switcher.
+// Data is pulled from the server initially then the click handler toggles between the 2 states
+// and sends the update to the server
 SimpleSwitherModule = function(config){
     var element = $(config.id);
     return {
