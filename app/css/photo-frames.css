@@ -8,6 +8,7 @@
 
 #photo-frames > div{
     position: absolute;
+    background-size: cover;
 }
 
 .frame-large{

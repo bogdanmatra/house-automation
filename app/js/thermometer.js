@@ -13,7 +13,7 @@ ThermometerModule = function(){
     };
 
     var sendUpdateToServer = function(newTemperature){
-        $.post( "mock-server/temperature-update", { newTemperature: newTemperature});
+        $.post( 'mock-server/temperature-update', { newTemperature: newTemperature});
     }
 
     var increaseTemperature = function(){
@@ -33,7 +33,7 @@ ThermometerModule = function(){
     }
 
     var init = function(){
-        $.get( "mock-server/current-temperature.json", function(data) {
+        $.get( 'mock-server/current-temperature.json', function(data) {
             currentTemperature = data.temperature;
             updateDOMTemperature(data.temperature);
         });
@@ -44,4 +44,4 @@ ThermometerModule = function(){
         increaseTemperature: increaseTemperature,
         decreaseTemperature: decreaseTemperature
     };
-}
+};
