@@ -5,7 +5,7 @@ $(document).ready(function(){
     var controlPanel = $('.control-panel');
 
     // Lamp module and curtain module both use SimpleSwitherModule because the logic is identical
-    // Initialize lamp module and attach handler
+    // Initialize Lamp Module and attach handler
     var lightLamp = SimpleSwitherModule({
         id: '#lamp-light',
         statusUrl: 'mock-server/light-status.json',
@@ -15,7 +15,7 @@ $(document).ready(function(){
     lightLamp.init();
     controlPanel.find('.fa-lightbulb-o').click(lightLamp.toggle);
 
-    // Initialize curtain module and attach handler
+    // Initialize Curtain Module and attach handler
     var curtain = SimpleSwitherModule({
         id: '#curtain',
         statusUrl: 'mock-server/curtain-status.json',
@@ -26,19 +26,26 @@ $(document).ready(function(){
     controlPanel.find('.fa-moon-o').click(curtain.toggle);
 
 
-    // Initialize thermometer module and attach handlers
+    // Initialize Thermometer Module and attach handlers
     var thermometer = ThermometerModule();
     thermometer.init();
     controlPanel.find('.fa-chevron-circle-down').click(thermometer.decreaseTemperature);
     controlPanel.find('.fa-chevron-circle-up').click(thermometer.increaseTemperature);
 
-    // Create photo frames module and attach handler
+    // Create Photo Frames Module and attach handler
     var photoFrames = PhotosFramesModule();
     controlPanel.find('.fa-photo').click(photoFrames.toggleSlideShow);
 
     // Water plant handler
     controlPanel.find('.fa-leaf').click(function(){
-        $('#cloud').toggleClass('move');
+        var cloud = $('#cloud');
+        cloud.addClass('move');
+        var animationDuration = parseInt(cloud.css('animation-duration')) * 1000;
+        // Remove animation class after animation has finished in order to animate again next time when adding the class
+        setTimeout(function(){
+            cloud.removeClass('move');
+        },animationDuration);
+        // Notify server to water plant
         $.post('mock-server/water-plant', { water : true });
     });
 

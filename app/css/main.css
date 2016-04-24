@@ -55,7 +55,7 @@ body {
 
 #cloud.move{
     animation-name: rain;
-    animation-duration: 5s;
+    animation-duration: 3s;
 }
 
 #cloud img{
