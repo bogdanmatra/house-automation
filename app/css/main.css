@@ -12,6 +12,7 @@ body {
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7);
 }
 
+/*Light CSS*/
 #lamp-light {
     position: absolute;
     top: 23%;
@@ -21,6 +22,11 @@ body {
     opacity: 0.3;
 }
 
+#lamp-light.light-open {
+    opacity: 1;
+}
+
+/*Thermometer CSS*/
 #thermometer {
     position: absolute;
     top: 5%;
@@ -33,13 +39,13 @@ body {
 #thermometer .quicksilver {
     width: 10px;
     position: absolute;
-    bottom: 25px;
+    bottom: 40px;
     left: 8px;
-    height: 100px;
     background: linear-gradient(yellow,orange, #CC0000);
+    border-radius: 10px;
 }
 
-
+/*Cloud CSS*/
 #cloud{
     position: absolute;
     top: -1000px;
@@ -61,6 +67,7 @@ body {
     100% {left:1500px; top:-1000px;}
 }
 
+/*Curtain CSS*/
 #curtain{
     z-index: 999;
     position: absolute;

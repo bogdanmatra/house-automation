@@ -1,5 +1,6 @@
 
 .control-panel {
+    z-index: 1000;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -9,6 +10,8 @@
     animation-name: slide-down;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+    color: white;
+    text-align: center;
 }
 
 .control-panel:hover {
@@ -18,9 +21,7 @@
 }
 
 .control-panel .header {
-    color: white;
     font-size: 20px;
-    text-align: center;
 }
 
 .control-panel .header span {
@@ -54,4 +55,5 @@
 
 .control-panel .controls-layout .control .fa-chevron-circle-up{
     display: block;
+    margin-bottom: 3px;
 }
