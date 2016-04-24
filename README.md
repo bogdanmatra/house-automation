@@ -17,9 +17,9 @@ The applications consists of:
  - Photo slideshow on/off
  - TODO Disco mode
 
- * The application is responsive and was tested on Chrome and Safari
+ The application is responsive and was tested on Chrome and Safari
 
- How to run the app (2 options):
+ #How to run the app (2 options):
 
  1. Run a plain HTTP server in the 'app' folder of the application
 
