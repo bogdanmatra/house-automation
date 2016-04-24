@@ -1,3 +1,4 @@
+/*Main space*/
 body {
     margin: 0;
     font-family: sans-serif;
@@ -15,7 +16,7 @@ body {
 /*Light CSS*/
 #lamp-light {
     position: absolute;
-    top: 23%;
+    top: 22%;
     left: 18%;
     transform: rotate(180deg);
     color: yellow;
@@ -63,7 +64,8 @@ body {
 
 @keyframes rain {
     0%   {left:0; top:0;}
-    75%  {left:85%; top:15%;}
+    40%  {left:85%; top:15%;}
+    60%  {left:85%; top:15%;}
     100% {left:1500px; top:-1000px;}
 }
 

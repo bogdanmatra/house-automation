@@ -2,7 +2,7 @@ PhotosFramesModule = function(){
     var frames = $('#photo-frames div');
     var backgroundImage = 'background-image';
     var maxFrames = 7;
-    var framesIndex=0;
+    var framesIndex;
     var cancelerList =[];
 
     var updateDOM = function(url, index){
@@ -28,6 +28,7 @@ PhotosFramesModule = function(){
     }
 
     var startSlideShow = function(){
+        framesIndex = 0;
         $.get('mock-server/photos.json', function(photos){
             photos.urls.forEach(function(url){
                 pushPhoto(url);

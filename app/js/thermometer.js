@@ -1,10 +1,13 @@
+// Thermometer module gets the temperature from the server and displays it in the thermometer widget.
+// The component can display temperatures on a scale 0-50
 ThermometerModule = function(){
 
-    var currentTemperature = 0;
+    var currentTemperature;
+    var minTemperature = 0;
     var maxTemperature = 50;
-
     var thermometer = $('#thermometer');
 
+    // Updates UI components translating values in 0-50 interval to thermoemter pixels and also displays it in digits
     var updateDOMTemperature = function(temperature){
         var totalHeight = parseInt(thermometer.css('height')) - parseInt(thermometer.find('.quicksilver').css('bottom'));
         var pixels = temperature * parseInt(totalHeight) / maxTemperature;
@@ -25,7 +28,7 @@ ThermometerModule = function(){
     }
 
     var decreaseTemperature = function(){
-        if(currentTemperature > 0){
+        if(currentTemperature > minTemperature){
             currentTemperature--;
             updateDOMTemperature(currentTemperature);
             sendUpdateToServer(currentTemperature);
@@ -33,6 +36,7 @@ ThermometerModule = function(){
     }
 
     var init = function(){
+        // Gets inital value from server
         $.get( 'mock-server/current-temperature.json', function(data) {
             currentTemperature = data.temperature;
             updateDOMTemperature(data.temperature);

@@ -1,4 +1,4 @@
-
+/*Control pannel position, animations and buttons*/
 .control-panel {
     z-index: 1000;
     position: fixed;
