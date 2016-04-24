@@ -17,13 +17,14 @@ The applications consists of:
  - Photo slideshow on/off
  - TODO Disco mode
 
+ * The application is responsive and was tested on Chrome and Safari
 
  How to run the app:
 
  1. Run a plain HTTP server in the 'app' folder of the application
 
  2. If you are using Node, you can run:
- * npm install
- * grunt serve
+ -> npm install
+ -> grunt serve
 
  This second mode was used at development time because as configured in 'Gruntfile.js' it starts a server at http://localhost:3000 and live reloads at file changes.

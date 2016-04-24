@@ -40,6 +40,7 @@ PhotosFramesModule = function(){
     var startSlideShow = function(){
         framesIndex = 0;
         $.get('mock-server/photos.json', function(photos){
+            // List of photos from National Geographic
             photos.urls.forEach(function(url){
                 pushPhoto(url);
             })
