@@ -34,6 +34,6 @@ module.exports = function(grunt){
 		grunt.loadNpmTasks('grunt-contrib-watch');
 		grunt.loadNpmTasks('grunt-express');
 		grunt.loadNpmTasks('grunt-open');
-		grunt.registerTask('serve',['express', 'open:server', 'watch']);
+		grunt.registerTask('server',['express', 'open:server', 'watch']);
 
 	};
