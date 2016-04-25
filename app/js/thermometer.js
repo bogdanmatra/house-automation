@@ -2,7 +2,7 @@
 // The component can display temperatures on a scale 0-35.
 ThermometerModule = (function(){
 
-    var currentTemperature;
+    var currentTemperature = 0;
     var minTemperature = 0;
     var maxTemperature = 35;
     var thermometer = $('#thermometer');
