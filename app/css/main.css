@@ -1,4 +1,4 @@
-/*Main space*/
+/*Main space CSS*/
 body {
     margin: 0;
     font-family: sans-serif;
@@ -11,6 +11,10 @@ body {
 .background-room .room-image {
     max-width: 100%;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7);
+}
+
+.rotate {
+    animation: rotate 2s infinite;
 }
 
 /*Light CSS*/
@@ -54,19 +58,11 @@ body {
 }
 
 #cloud.move{
-    animation-name: rain;
-    animation-duration: 3s;
+    animation: rain 3s;
 }
 
 #cloud img{
     zoom: 40%;
-}
-
-@keyframes rain {
-    0%   {left:0; top:0;}
-    40%  {left:85%; top:15%;}
-    60%  {left:85%; top:15%;}
-    100% {left:1500px; top:-1000px;}
 }
 
 /*Curtain CSS*/
@@ -77,51 +73,17 @@ body {
     overflow: hidden;
     height: 2%;
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.8);
-    animation-name: move-up;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+    animation: move-up 2s forwards;
 }
 
 #curtain.move-down {
-    animation-name: move-down;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+    animation: move-down 2s forwards;
 }
 
 #curtain img {
     max-width: 100%;
 }
 
-@keyframes move-down {
-    from {height: 2%;}
-    to {height: 60%;}
-}
-
-@keyframes move-up {
-    from {height: 60%;}
-    to {height: 2%;}
-}
-
-.rotate {
-    animation: rotate 2s infinite;
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg);  }
-}
-
-#curtain.wiggle, .control-panel.wiggle {
+#curtain.wiggle {
     animation: wiggle 1s infinite;
-}
-
-.control-panel.wiggle:hover {
-    animation: wiggle 1s infinite;
-    height:15%;
-}
-
-@keyframes wiggle {
-    0% { transform: rotate(-1deg); }
-    50% { transform: rotate(1deg);  }
-    100% { transform: rotate(-1deg);  }
 }

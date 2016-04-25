@@ -1,0 +1,38 @@
+/*CSS3 Animations*/
+@keyframes rain {
+    0%   {left:0; top:0;}
+    40%  {left:85%; top:15%;}
+    60%  {left:85%; top:15%;}
+    100% {left:1500px; top:-1000px;}
+}
+
+@keyframes move-down {
+    from {height: 2%;}
+    to {height: 60%;}
+}
+
+@keyframes move-up {
+    from {height: 60%;}
+    to {height: 2%;}
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg);  }
+}
+
+@keyframes slide-up {
+    from {height: 5%;}
+    to {height:15%;}
+}
+
+@keyframes slide-down {
+    from {height: 15%;}
+    to {height: 5%;}
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(-1deg); }
+    50% { transform: rotate(1deg);  }
+    100% { transform: rotate(-1deg);  }
+}

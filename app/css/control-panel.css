@@ -1,4 +1,4 @@
-/*Control pannel position, animations and buttons*/
+/*Control pannel position and buttons*/
 .control-panel {
     z-index: 1000;
     position: fixed;
@@ -7,18 +7,14 @@
     right: 0;
     background: #4D453A;
     box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.7);
-    animation-name: slide-down;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+    animation: slide-down 1s forwards;
     color: white;
     text-align: center;
     -webkit-user-select: none;
 }
 
 .control-panel:hover {
-    animation-name: slide-up;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
+    animation: slide-up 0.5s forwards;
 }
 
 .control-panel .header {
@@ -28,16 +24,6 @@
 .control-panel .header span {
     vertical-align: super;
     padding-left: 15px;
-}
-
-@keyframes slide-up {
-    from {height: 5%;}
-    to {height:15%;}
-}
-
-@keyframes slide-down {
-    from {height: 15%;}
-    to {height: 5%;}
 }
 
 .control-panel .controls-layout .control{
@@ -62,4 +48,11 @@
 .control-panel .controls-layout .control .fa-chevron-circle-up{
     display: block;
     margin-bottom: 3px;
+}
+
+.control-panel.wiggle:hover {
+    height:15%;
+}
+.control-panel.wiggle{
+    animation: wiggle 1s infinite;
 }
