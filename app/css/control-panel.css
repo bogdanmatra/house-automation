@@ -55,7 +55,7 @@
     opacity: 1;
 }
 
-.control-panel .controls-layout .control:last-child{
+.control-panel .controls-layout .control.larger{
     font-size: 25px;
 }
 

@@ -101,3 +101,27 @@ body {
     from {height: 60%;}
     to {height: 2%;}
 }
+
+.rotate {
+    animation: rotate 2s infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg);  }
+}
+
+#curtain.wiggle, .control-panel.wiggle {
+    animation: wiggle 1s infinite;
+}
+
+.control-panel.wiggle:hover {
+    animation: wiggle 1s infinite;
+    height:15%;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(-1deg); }
+    50% { transform: rotate(1deg);  }
+    100% { transform: rotate(-1deg);  }
+}

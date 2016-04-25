@@ -30,9 +30,6 @@ $(document).ready(function(){
     controlPanel.find('.fa-chevron-circle-down').click(ThermometerModule.decreaseTemperature);
     controlPanel.find('.fa-chevron-circle-up').click(ThermometerModule.increaseTemperature);
 
-    // Create Photo Frames Module and attach handler.
-    controlPanel.find('.fa-photo').click(PhotosFramesModule.toggleSlideShow);
-
     // Water plant handler.
     controlPanel.find('.fa-leaf').click(function(){
         var cloud = $('#cloud');
@@ -44,6 +41,24 @@ $(document).ready(function(){
         },animationDurationMs);
         // Notify server to water plant.
         $.post(Routes.waterPlantUrl , { water : true });
+    });
+
+    // PhotoFramesModule attach handler.
+    controlPanel.find('.fa-photo').click(function(){
+        // Making sure party stops before slideshow start.
+        PartyModule.stopParty();
+        PhotosFramesModule.toggleSlideShow();
+    });
+
+    // PartyModule attach handler.
+    controlPanel.find('.fa-birthday-cake').click(function(){
+        // Making sure slideshow stops before party start.
+        PhotosFramesModule.stopSlideShow();
+        PartyModule.toggleParty()
+    });
+
+    controlPanel.find('.fa').click(function(){
+        $('#control-sound').get(0).play();
     });
 
 });

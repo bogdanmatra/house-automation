@@ -4,12 +4,13 @@
 PhotosFramesModule = (function(){
     var frames = $('#photo-frames div');
     var backgroundImage = 'background-image';
-    var maxFrames = 7;
+    var maxFrames = frames.length;
     var framesIndex;
     var cancelerList =[];
-    var updateInterval = 1500;
+    var updateInterval = 1000;
+    var slideshowInProgress = false;
 
-    var updateDOM = function(url, index){
+    var updateDOMPicture = function(url, index){
         $(frames[index]).css(backgroundImage, 'url('+ url + ')');
     };
 
@@ -18,7 +19,7 @@ PhotosFramesModule = (function(){
     var delayPhotoReplace = function(url, delay){
         var randomFrameIndex =  parseInt(Math.random()*maxFrames);
         var canceler = setTimeout(function(){
-            updateDOM(url, randomFrameIndex);
+            updateDOMPicture(url, randomFrameIndex);
         },delay);
         cancelerList.push(canceler);
     };
@@ -27,7 +28,7 @@ PhotosFramesModule = (function(){
     // to randomly replace an existing photo.
     var pushPhoto = function(url){
         if(framesIndex < maxFrames){
-            updateDOM(url, framesIndex);
+            updateDOMPicture(url, framesIndex);
         }else{
             //Calculates a delay for the picture, the picture will appear in the order of the received list.
             var delay = (framesIndex - maxFrames + 1) * updateInterval;
@@ -38,6 +39,7 @@ PhotosFramesModule = (function(){
 
     // Retrieves photo list from the server and starts slideshow.
     var startSlideShow = function(){
+        slideshowInProgress = true;
         framesIndex = 0;
         $.get( Routes.getPhotosUrl , function(photos){
             // List of photos from National Geographic.
@@ -49,6 +51,7 @@ PhotosFramesModule = (function(){
 
     // Cleans slots and cancels the 'setTimeout' photos which are pending to replace a random photo.
     var stopSlideShow = function(){
+        slideshowInProgress = false;
         frames.css(backgroundImage,'');
         cancelerList.forEach(function(canceler){
             clearTimeout(canceler);
@@ -56,10 +59,8 @@ PhotosFramesModule = (function(){
     };
 
     // Toggles between calling start/stop slideshow functions.
-    var toggler = true;
     var toggleSlideShow = function(){
-        toggler ? startSlideShow() : stopSlideShow();
-        toggler = !toggler;
+        slideshowInProgress ? stopSlideShow() : startSlideShow();
     };
 
     return {

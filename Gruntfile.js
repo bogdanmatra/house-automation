@@ -12,7 +12,7 @@ module.exports = function(grunt){
     var distFolder = 'dist';
     var distJSPath = distFolder + '/house-automation.min.js';
     var distCSSPath = distFolder + '/house-automation.min.css';
-    var unchangedFiles = ['index.html', 'favicon.ico', 'img/*', 'mock-server/*'];
+    var unchangedFiles = ['index.html', 'favicon.ico', 'img/*', 'audio/*', 'mock-server/*'];
     var indexPath = distFolder + '/index.html';
 
     grunt.initConfig({
