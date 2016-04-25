@@ -1,13 +1,13 @@
 // Thermometer module gets the temperature from the server and displays it in the thermometer widget.
-// The component can display temperatures on a scale 0-35
-ThermometerModule = function(){
+// The component can display temperatures on a scale 0-35.
+ThermometerModule = (function(){
 
     var currentTemperature;
     var minTemperature = 0;
     var maxTemperature = 35;
     var thermometer = $('#thermometer');
-    
-    // Updates UI components translating values in 0-35 interval to thermoemter pixels and also displays it in digits
+
+    // Updates UI components translating values in 0-35 interval to thermoemter pixels and also displays it in digits.
     var updateDOMTemperature = function(temperature){
         var totalHeight = parseInt(thermometer.css('height')) - parseInt(thermometer.find('.quicksilver').css('bottom'));
         var pixels = temperature * parseInt(totalHeight) / maxTemperature;
@@ -16,7 +16,7 @@ ThermometerModule = function(){
     };
 
     var sendUpdateToServer = function(newTemperature){
-        $.post( 'mock-server/temperature-update', { newTemperature: newTemperature});
+        $.post( Routes.setTemperatureUrl , { newTemperature: newTemperature});
     }
 
     var increaseTemperature = function(){
@@ -36,8 +36,8 @@ ThermometerModule = function(){
     }
 
     var init = function(){
-        // Gets inital value from server
-        $.get( 'mock-server/current-temperature.json', function(data) {
+        // Gets inital value from server.
+        $.get( Routes.getTemperatureUrl , function(data) {
             currentTemperature = data.temperature;
             updateDOMTemperature(data.temperature);
         });
@@ -48,4 +48,4 @@ ThermometerModule = function(){
         increaseTemperature: increaseTemperature,
         decreaseTemperature: decreaseTemperature
     };
-};
+})();
