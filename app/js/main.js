@@ -1,7 +1,7 @@
 //Control panel setup afer document is ready.
 $(document).ready(function(){
 
-    // Control panel select
+    // Control panel selected and all module actions will be attached to control button click handlers
     var controlPanel = $('.control-panel');
 
     // Lamp module and Curtain Module both use SimpleSwitherModule because the logic is identical.
@@ -57,6 +57,7 @@ $(document).ready(function(){
         PartyModule.toggleParty()
     });
 
+    //Control buttons sound added
     controlPanel.find('.fa').click(function(){
         $('#control-sound').get(0).play();
     });

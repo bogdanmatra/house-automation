@@ -3,7 +3,7 @@
 // Communication with the server is optional (Parameters: config.statusUrl, config.updateUrl).
 SimpleSwitherModule = function(config){
     if (!(config && config.id &&  config.class)){
-        throw new Error('Not a valid config object.');
+        throw new Error('Not a valid config object passed. Must have at least id and class properties.');
     }
     var switchedElement = $(config.id);
 
