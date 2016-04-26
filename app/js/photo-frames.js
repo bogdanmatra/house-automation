@@ -1,6 +1,6 @@
 // PhotoFramesModule encapsulates the logic for changing pictures in the available 7 slots.
 // The photo list is retrieved from the server and the first 7 photos are placed in the available slots.
-// Then photos are replaced randomly with the remaining items at each 1.5 seconds passed.
+// Then photos are replaced randomly with the remaining items at each 1 second passed.
 PhotosFramesModule = (function(){
     var frames = $('#photo-frames div');
     var backgroundImage = 'background-image';
