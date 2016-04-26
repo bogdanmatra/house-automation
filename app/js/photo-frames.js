@@ -5,8 +5,8 @@ PhotosFramesModule = (function(){
     var frames = $('#photo-frames div');
     var backgroundImage = 'background-image';
     var maxFrames = frames.length;
-    var framesIndex;
-    var cancelerList =[];
+    var framesIndex = 0;
+    var cancelerList = [];
     var updateInterval = 1000;
     var slideshowInProgress = false;
 

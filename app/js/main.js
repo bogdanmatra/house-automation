@@ -4,7 +4,7 @@ $(document).ready(function(){
     // Control panel selected and all module actions will be attached to control button click handlers
     var controlPanel = $('.control-panel');
 
-    // Lamp module and Curtain Module both use SimpleSwitherModule because the logic is identical.
+    // Lamp Module and Curtain Module both use SimpleSwitherModule because the logic is identical.
     // Initialize Lamp Module and attach handler.
     var lightLamp = SimpleSwitherModule({
         id: '#lamp-light',
