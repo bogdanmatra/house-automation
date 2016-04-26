@@ -11,8 +11,8 @@ ThermometerModule = (function(){
     var updateDOMTemperature = function(temperature){
         var totalHeight = parseInt(thermometer.css('height')) - parseInt(thermometer.find('.quicksilver').css('bottom'));
         var pixels = temperature * parseInt(totalHeight) / maxTemperature;
-        thermometer.find('.temperature-digits span').text(temperature);
         thermometer.find('.quicksilver').css('height', pixels);
+        thermometer.find('.temperature-digits span').text(temperature);
     };
 
     var sendUpdateToServer = function(newTemperature){
