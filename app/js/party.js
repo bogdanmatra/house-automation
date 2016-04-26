@@ -18,7 +18,7 @@ PartyModule = (function(){
     // Method generates a random color and populates the frames then updates all coolors at 0.2 seconds.
     var startColorFlashes = function(){
         var getRandomColor = function(){
-            // Code belongs to: https://css-tricks.com/examples/RandomHexColor/ .
+            // This code line belongs to: https://css-tricks.com/examples/RandomHexColor/ .
             return '#' + Math.floor(Math.random()*16777215).toString(16);
         };
         var changeAllColors = function(){

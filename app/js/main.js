@@ -35,7 +35,7 @@ $(document).ready(function(){
         var cloud = $('#cloud');
         var moveClass = 'move';
         // Restart CSS3 animation by cloning element and then removing origial element
-        // https://css-tricks.com/restart-css-animation/
+        // Multiple options discussed at: https://css-tricks.com/restart-css-animation/
         var clonedCloud = cloud.clone(true);
         cloud.before(clonedCloud);
         cloud.remove();
