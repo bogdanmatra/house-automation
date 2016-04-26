@@ -33,7 +33,7 @@ body {
 
 /*Thermometer CSS*/
 #thermometer {
-    position: absolute;
+    position: fixed;
     top: 5%;
     right: 13%;
 }
@@ -52,7 +52,7 @@ body {
 
 /*Cloud CSS*/
 #cloud{
-    position: absolute;
+    position: fixed;
     top: -1000px;
     left: -1000px;
 }
@@ -86,4 +86,15 @@ body {
 
 #curtain.wiggle {
     animation: wiggle 1s infinite;
+}
+
+@media screen and (max-width: 768px) {
+    /*Smaller cloud on mobile*/
+    #cloud {
+        zoom: 40%%;
+    }
+    /*Move lamp light slightly to the left on mobile*/
+    #lamp-light {
+        left: 15%;
+    }
 }

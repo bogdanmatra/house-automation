@@ -50,13 +50,18 @@
     margin-bottom: 3px;
 }
 
-.control-panel.wiggle{
+div.control-panel.wiggle{
     animation: wiggle 1s infinite;
 }
 
-/*No hiding control panel on mobile*/
 @media screen and (max-width: 768px) {
+    /*No hiding control panel on mobile*/
     .control-panel, .control-panel:hover {
         animation: none;
+    }
+    /*Inline thermometer controls on mobile*/
+    .control-panel .controls-layout .control.larger .fa{
+        display: inline-block;;
+        padding: 10px;
     }
 }
