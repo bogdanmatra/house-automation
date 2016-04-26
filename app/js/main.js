@@ -33,12 +33,12 @@ $(document).ready(function(){
     // Water plant handler.
     controlPanel.find('.fa-leaf').click(function(){
         var cloud = $('#cloud');
-        cloud.addClass('move');
-        var animationDurationMs = parseInt(cloud.css('animation-duration')) * 1000;
-        // Remove animation class after animation has finished in order to animate again next time when adding the class
-        setTimeout(function(){
-            cloud.removeClass('move');
-        },animationDurationMs);
+        var moveClass = 'move';
+        // Restart CSS3 animation by cloning element and then removing origial element
+        var clonedCloud = cloud.clone(true);
+        cloud.before(clonedCloud);
+        cloud.remove();
+        clonedCloud.addClass(moveClass);
         // Notify server to water plant.
         $.post(Routes.waterPlantUrl , { water : true });
     });
