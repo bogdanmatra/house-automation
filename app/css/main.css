@@ -91,7 +91,7 @@ body {
 @media screen and (max-width: 768px) {
     /*Smaller cloud on mobile*/
     #cloud img{
-        zoom: 25%%;
+        zoom: 25%;
     }
     /*Move lamp light slightly to the left on mobile*/
     #lamp-light {
