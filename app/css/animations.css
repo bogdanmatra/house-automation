@@ -1,14 +1,14 @@
 /*CSS3 Animations*/
 @keyframes rain {
-    0%   {left:0; top:0;}
-    40%  {left:85%; top:15%;}
-    60%  {left:85%; top:15%;}
-    100% {left:1500px; top:-1000px;}
+    0%   { left:0; top:0; }
+    40%  { left:85%; top:15%; }
+    60%  { left:85%; top:15%; }
+    100% { left:1500px; top:-1000px; }
 }
 
 @keyframes move-down {
-    from {height: 2%;}
-    to {height: 60%;}
+    from { height: 2%; }
+    to { height: 60%; }
 }
 
 @keyframes move-up {
@@ -22,13 +22,13 @@
 }
 
 @keyframes slide-up {
-    from {height: 5%;}
-    to {height:15%;}
+    from { height: 50px; }
+    to { height: 120px; }
 }
 
 @keyframes slide-down {
-    from {height: 15%;}
-    to {height: 5%;}
+    from { height: 120px; }
+    to { height: 50px; }
 }
 
 @keyframes wiggle {

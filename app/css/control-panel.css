@@ -50,9 +50,13 @@
     margin-bottom: 3px;
 }
 
-.control-panel.wiggle:hover {
-    height:15%;
-}
 .control-panel.wiggle{
     animation: wiggle 1s infinite;
+}
+
+/*No hiding control panel on mobile*/
+@media screen and (max-width: 768px) {
+    .control-panel, .control-panel:hover {
+        animation: none;
+    }
 }

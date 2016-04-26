@@ -18,7 +18,7 @@ The applications consists of:
  - Photo slideshow on/off (Gets list of Photos from server (National Geographic Urls) and slideshows them in the 7 photo frames of the room)
  - Party mode on/off (Plays music, randomly switches colors in the photo frames, animates other room objects)
 
- > The application is mainly responsive and was tested on Chrome and Safari.
+ > The application is responsive and was tested on Chrome and Safari.
  > Grunt profile was created to obtain a minified version. ( Run 'grunt dist' to get the minified version in 'dist' folder )
 
  #How to run the app (2 options):
