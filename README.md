@@ -9,8 +9,6 @@ The applications consists of:
  - a control panel where you can update automated systems in the house, these buttons trigger the animations and the HTTP call to update the modified state.
 
  # DEMO
- Demo link: http://houseautomation-bogdanmatra.rhcloud.com/app/
- Minified code link: http://houseautomation-bogdanmatra.rhcloud.com/dist/
 
  The room initially communicates with the server to find out some statuses (light, temperature, curtains).
  Functionalities:
